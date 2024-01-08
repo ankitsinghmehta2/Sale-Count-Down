@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sales countdown</title>
+  <style>
+    body{
+      background: linear-gradient(to right, #ff3300, #ff9100);
+      text-align: center;
+      color: white;
+      padding: 120px;
+      font-size: 38px;
+    }
+    img{
+        width: 200px;
+        height: 200px;
+    }
+  </style>
+</head>
+<body>
+    <h1>SALES COUNTDOWN TIMER</h1>
+    <h4>Offer endes in </h4>
+    <img src="/project folder/img all/applesalecountdown.png" alt="">
+    <div id="a"></div>
+    <script>
+        setInterval(() => {
+        const current=new Date()
+        const end=new Date(current.getFullYear(),11-1,31,23,59,59)
+        let tdif=(end-current)/1000
+        let a=`${Math.floor(tdif/86400)}days |
+        ${Math.floor(tdif%86400/3600)}hr |
+        ${Math.floor(tdif%3600/60)}min |
+        ${Math.floor(tdif%60)}sec`
+        document.getElementById("a").innerHTML=a
+    }, 500);
+    </script>
+ 
+</body>
+</html>
